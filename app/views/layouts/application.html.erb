@@ -9,6 +9,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="hold-transition login-page">
+<div>
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook",auth_facebook_callback_path, id: "sign_in" %>
+  <% end %>
+</div>
 
 <%= yield %>
 

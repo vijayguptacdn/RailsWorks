@@ -51,6 +51,7 @@ Rails.application.configure do
     password: 'somepass',
     authentication: :plain,
     domain: 'somedomain'
+  }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
