@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
+  devise_for :users,controllers: { confirmations: 'confirmations' } 
   #devise_for :users
-  devise_for :users
+  resources :pets
+  resources :items
+  #devise_for :users
+  #devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

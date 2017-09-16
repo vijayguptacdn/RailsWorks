@@ -1,0 +1,50 @@
+<%= form_for(@item,html: { multipart: true })  do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br>
+     <%= f.file_field :image %>
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.thumb.url %>
+    <% end %>  
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+   <div class="field">
+    <%= f.label :item_type %><br>
+    <%= f.label :item_type, "Import", :value => true  %>
+    <%= f.radio_button :item_type, true %>
+    <%= f.label :item_type, "Export", :value => false %>
+    <%= f.radio_button :item_type, false %>
+  </div>
+   <div class="field">
+    <%= f.label :item_category %><br>
+    <%= f.select :item_category, [ 'Cell', 'book', 'laptop' ], :prompt => 'Select One' %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

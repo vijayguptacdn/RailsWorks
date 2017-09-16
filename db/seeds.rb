@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+  (1..10).each do 
+   Item.create({name: "Rayban Sunglasses", description: "Stylish shades", price: 99.99, user_id: User.first.id})
+  	
+  end
