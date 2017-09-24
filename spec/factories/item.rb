@@ -5,7 +5,7 @@ FactoryGirl.define do
   	item_type true
   	item_category "book"
   	price 100
-  	#user
+    user_id 1 
   end
 end
 
