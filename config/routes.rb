@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :orders
   devise_for :users,controllers: { confirmations: 'confirmations' } 
   #devise_for :users
   resources :pets
